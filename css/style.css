@@ -1,0 +1,121 @@
+/* Wrapper Style Code */
+.wrapper {
+ width: 100%;
+ height: 100vh;
+ background: #eee;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ min-height: 768px;
+ /* 스크롤 생성하기 위한 값 */
+}
+
+.dashboard {
+ width: 90%;
+ max-width: 1280px;
+ height: 90%;
+ background: #efefef;
+ box-shadow: 0 0 128px 0 rgb(0 0 0 / 10%), 0 32px 64px -48px rgb(0 0 0 / 50%);
+ border-radius: 15px;
+ display: flex;
+ padding: 10px;
+ justify-content: space-between;
+}
+
+.dashboard>* {
+ border-radius: 15px;
+}
+
+/* Header Content Style Code */
+header {
+ width: 10%;
+ height: 100%;
+ background: #7c41f5;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ padding: 30px 0;
+}
+
+header a {
+ color: #fff;
+}
+
+header .gnb {
+ width: 100%;
+}
+
+header .sign-out {
+ font-size: 20px;
+}
+
+header .gnb a {
+ width: 100%;
+ padding: 15px 0;
+ font-size: 20px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+/* Graph-ui Content Style Code */
+.graph-ui {
+ width: calc(55% - 20px);
+ height: 100%;
+ _background: #666;
+}
+
+.graph-ui>div {
+ width: 100%;
+ height: 33.33%;
+ border-radius: 15px;
+}
+
+.graph-ui>div.intro {
+ background: #ff9062;
+}
+
+.graph-ui>div.each-pofol {
+ padding: 20px 0;
+}
+
+.graph-ui>div.each-pofol>div {
+ width: 100%;
+ height: 100%;
+ border-radius: 15px;
+}
+
+.graph-ui .each-pofol .each-title {
+ width: 100%;
+ height: 25%;
+}
+
+.graph-ui .each-pofol .each-graph {
+ width: 100%;
+ height: 75%;
+ display: flex;
+ justify-content: space-between;
+}
+
+.graph-ui .each-pofol .each-graph div {
+ height: 100%;
+ border: 1px solid #f7f7f7;
+ width: calc(25% - 7.5px);
+ border-radius: 15px;
+ background: #fff;
+ box-shadow: 0px 0px 3px #ccc;
+}
+
+.graph-ui>div.total-pofol {
+ border: 1px solid #f7f7f7;
+ box-shadow: 0px 0px 3px #ccc;
+ background: #fff;
+}
+
+/* Table-ui Content Style Code */
+.table-ui {
+ width: 35%;
+ height: 100%;
+ background: #333;
+}
