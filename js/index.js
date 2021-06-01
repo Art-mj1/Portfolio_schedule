@@ -1,3 +1,4 @@
+//Cutting Contents Text
 const conTxt=document.querySelectorAll('.con-txt p a');
 
 conTxt.forEach(element => {
@@ -5,3 +6,7 @@ conTxt.forEach(element => {
  element.textContent =  cutTxT;
 });
 
+//Mobile Menu Activate
+const mobileMenu =document.querySelector('.mobile-menu');
+mobileMenu.onclick = ()=> {
+mobileMenu.classList.toggle('active');}
