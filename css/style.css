@@ -1,3 +1,26 @@
+@font-face {
+ font-family: 'todo-logo-for-lecture';
+ src: url('/schedule/font/todo-logo-for-lecture-Regular.eot') format('embedded-opentype'),
+  url('/schedule/font/todo-logo-for-lecture-Regular.woff2') format('woff2'),
+  url('/schedule/font/todo-logo-for-lecture-Regular.woff') format('woff'),
+  url('/schedule/font/todo-logo-for-lecture-Regular.ttf') format('truetype');
+}
+
+.custom-font {
+ display: inline-block;
+ _font: normal normal normal 14px/1 todo-logo-for-lecture;
+ font-family: todo-logo-for-lecture;
+ font-size: 80px;
+ line-height: 0;
+ text-rendering: auto;
+ font-style: normal;
+ font-weight: normal;
+}
+
+.custom-font:before {
+ content: "\0530";
+}
+
 /* Wrapper Style Code */
 .wrapper {
  width: 100%;
@@ -131,19 +154,19 @@ header .gnb a {
  position: relative;
 }
 
-.graph-ui div.intro .slide-box:nth-child(2) {
+.graph-ui div.intro .slide-box:nth-child(1) {
  background: #ff9062;
 }
 
-.graph-ui div.intro .slide-box:nth-child(3) {
+.graph-ui div.intro .slide-box:nth-child(2) {
  background: #7c41f5;
 }
 
-.graph-ui div.intro .slide-box:nth-child(4) {
+.graph-ui div.intro .slide-box:nth-child(3) {
  background: #3acbe8;
 }
 
-.graph-ui div.intro .slide-box:nth-child(5) {
+.graph-ui div.intro .slide-box:nth-child(4) {
  background: cyan;
 }
 
@@ -234,6 +257,9 @@ header .gnb a {
  border-radius: 15px;
  background: #fff;
  box-shadow: 0px 0px 3px #ccc;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 .graph-ui>div.total-pofol {
