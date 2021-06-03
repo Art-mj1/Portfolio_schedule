@@ -1,4 +1,4 @@
-@media screen and (max-width: 1280px) {
+@media screen and (max-width:1280px) {
  .dashboard {
   flex-wrap: wrap;
  }
@@ -20,24 +20,24 @@
   padding: 0 15px;
  }
 
- /* Graph-ui Content Style Code */
+ /* Graph-ui Contents Style Code */
  .graph-ui {
-  width: calc(65% - 20px);
   height: calc(90% - 10px);
   margin-top: 10px;
+  width: calc(60% - 10px);
  }
 
- /* Table-ui Content Style Code */
+ /* Table-ui Contents Style Code */
  .table-ui {
-  _width: 40%;
   height: calc(90% - 10px);
   margin-top: 10px;
+  width: 40%;
  }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width:950px) {
 
- /* Graph-ui Content Style Code */
+ /* Graph-ui Contents Style Code */
  .graph-ui>div.each-pofol {
   height: 26%;
  }
@@ -46,6 +46,7 @@
   height: 40%;
  }
 
+ /* Pie Chart Style Code */
  .chart {
   width: 100%;
   height: 100%;
@@ -58,9 +59,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
  }
+
+ .graph-ui .each-pofol .each-graph div {
+  min-height: auto;
+ }
+
+ .graph-ui .each-pofol .each-graph div b {
+  display: none;
+ }
+
+ .graph-ui .each-pofol .each-graph div i {
+  display: block;
+ }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:768px) {
  .wrapper {
   display: block;
   height: auto;
@@ -70,24 +83,23 @@
  .dashboard {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 0;
  }
 
+ /* Header CSS Code */
  header {
   padding: 15px;
  }
 
- /* Graph-ui Content Style Code */
+ /* Graph-ui Contents Style Code */
  .graph-ui {
-  width: 100%;
   height: auto;
   margin-top: 10px;
+  width: 100%;
  }
 
  .graph-ui>div {
-  width: 100%;
   height: auto;
-  padding: 10px 0;
  }
 
  .graph-ui>div.each-pofol {
@@ -99,20 +111,25 @@
   padding: 10px 0 10px 5px;
  }
 
+ .graph-ui .each-pofol .each-graph {
+  height: auto;
+ }
+
  .graph-ui .each-pofol .each-graph div {
   height: 120px;
  }
 
- .graph-ui div.intro .slide-box {
-  border-radius: 15px;
+ .graph-ui>div.total-pofol {
+  height: 250px;
  }
 
- /* Table-ui Content Style Code */
+ /* Table-ui Contents Style Code */
  .table-ui {
-  width: 100%;
   height: auto;
   margin-top: 10px;
+  width: 100%;
  }
+
 
  .chart {
   width: 100%;
@@ -120,23 +137,19 @@
  }
 
  .chart canvas {
-  width: 75% !important;
-  height: auto !important;
+  width: auto !important;
+  height: 75% !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
  }
-
- .graph-ui>div.total-pofol {
-  height: 250px;
- }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width:400px) {
 
  /* Header CSS Code */
- header .h2 {
-  width: 20%;
+ header h2 {
+  width: 20px;
  }
 
  header .gnb {
@@ -148,16 +161,17 @@
  }
 
  .custom-font {
-  font-size: 28px;
-  ;
+  font-size: 60px;
  }
 
  .mobile-menu {
   display: block;
  }
 
+ /* Graph-ui Contents Style Code */
  .graph-ui div.intro .slide-box {
   padding: 20px 50px;
+  text-align: center;
   align-items: center;
  }
 
@@ -165,7 +179,7 @@
   font-size: 18px;
  }
 
- .graph-ui div.intro p {
+ .graph-ui div.intro P {
   display: none;
  }
 
