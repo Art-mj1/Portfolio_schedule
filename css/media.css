@@ -33,6 +33,12 @@
   margin-top: 10px;
   width: 40%;
  }
+
+ /* Pie Chart Style Code */
+ .chart {
+  width: 90px;
+  height: 90px;
+ }
 }
 
 @media screen and (max-width:950px) {
@@ -53,8 +59,8 @@
  }
 
  .chart canvas {
-  width: 85% !important;
-  height: auto !important;
+  _width: 85% !important;
+  _height: auto !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -70,6 +76,14 @@
 
  .graph-ui .each-pofol .each-graph div i {
   display: block;
+ }
+
+ .graph-ui>div.total-pofol div.total-chart {
+  width: 50%;
+ }
+
+ div.total-txt {
+  width: 50%;
  }
 }
 
@@ -123,6 +137,24 @@
   height: 250px;
  }
 
+ div.total-txt {
+  padding-left: 40px;
+ }
+
+ div.total-txt h3 {
+  font-size: 16px;
+ }
+
+ div.total-txt p {
+  font-size: 14px;
+ }
+
+ div.total-txt button {
+  font-size: 12px;
+ }
+
+
+
  /* Table-ui Contents Style Code */
  .table-ui {
   height: auto;
@@ -130,15 +162,14 @@
   width: 100%;
  }
 
-
  .chart {
   width: 100%;
   height: 100%;
  }
 
  .chart canvas {
-  width: auto !important;
-  height: 75% !important;
+  _width: auto !important;
+  _height: 75% !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -175,6 +206,7 @@
   align-items: center;
  }
 
+
  .graph-ui div.intro h2 {
   font-size: 18px;
  }
@@ -192,5 +224,22 @@
  .graph-ui .each-pofol .each-graph div {
   width: calc(50% - 5px);
   margin-top: 10px;
+ }
+
+ .graph-ui>div.total-pofol {
+  height: 350px;
+  display: block;
+ }
+
+ .graph-ui>div.total-pofol div.total-chart,
+ .graph-ui>div.total-pofol div.total-txt {
+  width: 100%;
+  height: 50%;
+  padding: 0;
+  text-align: center;
+ }
+
+ .graph-ui>div.total-pofol div.total-txt button {
+  margin: auto;
  }
 }
