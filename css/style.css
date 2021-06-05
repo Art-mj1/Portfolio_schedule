@@ -312,7 +312,7 @@ header .sign-out {
   padding: 10px 0;
 }
 
-/*div.*/
+/* div.total-chart */
 
 div.total-chart .chart {
   width: 100%;
@@ -362,7 +362,7 @@ div.total-txt p {
 div.total-txt button {
   border: 1px solid #7c41f5;
   background: #fff;
-  padding: 5px 20px;
+  padding: 5px 0px;
   color: #555;
   width: 150px;
   transition: all 0.4s;

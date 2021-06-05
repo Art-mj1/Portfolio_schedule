@@ -137,8 +137,15 @@
   height: 250px;
  }
 
+ /* Table-ui Contents Style Code */
+ .table-ui {
+  height: auto;
+  margin-top: 10px;
+  width: 100%;
+ }
+
  div.total-txt {
-  padding-left: 40px;
+  padding-left: 30px;
  }
 
  div.total-txt h3 {
@@ -153,15 +160,6 @@
   font-size: 12px;
  }
 
-
-
- /* Table-ui Contents Style Code */
- .table-ui {
-  height: auto;
-  margin-top: 10px;
-  width: 100%;
- }
-
  .chart {
   width: 100%;
   height: 100%;
@@ -174,6 +172,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
  }
+
 }
 
 @media screen and (max-width:400px) {

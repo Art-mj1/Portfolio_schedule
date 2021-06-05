@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }else if(winWidth <= 400){
     pieSize = 140;
   } 
-  
   else {
     pieSize = 200;
   }
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }else if(winWidth <= 400){
     pieSize = 140;
   } 
-  
   else {
     pieSize = 200;
   }
