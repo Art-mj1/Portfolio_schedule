@@ -124,7 +124,7 @@ header .sign-out {
   transform: rotate(135deg);
 }
 
-/* Graph-ui Contents Style Code */
+/* Main Page Graph-ui Contents Style Code */
 .graph-ui {
   width: calc(55% - 20px);
   height: 100%;
@@ -400,6 +400,12 @@ div.total-txt button:hover {
   box-shadow: 0px 0px 3px #ccc;
   background: #fff;
   padding: 30px 20px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.table-ui>div::-webkit-scrollbar {
+  display: none;
 }
 
 /*.table-ui>div.each-contents{margin-top:10px;}*/
@@ -467,7 +473,7 @@ div.total-txt button:hover {
   font-size: 12px;
 }
 
-.table-ui .each-contents .each-btns button {
+.table-ui .each-contents .each-btns a {
   width: 25%;
   display: block;
   border: 1px solid #fff;
@@ -476,10 +482,106 @@ div.total-txt button:hover {
   padding: 10px 0;
   font-weight: 400;
   border-radius: 10px;
+  text-align: center;
 }
 
-.table-ui .each-contents .each-btns button.active {
+.table-ui .each-contents .each-btns a.active {
   color: #ff9062;
   background: #fff;
   border: 1px solid #ff9062
+}
+
+/* Insert Form Page Graph-ui Contents Style Code */
+
+.graph-ui>div.input-box {
+  width: 100%;
+  height: calc(66.66% - 10px);
+  border-radius: 15px;
+  border: 1px solid #f7f7f7;
+  box-shadow: 0px 0px 3px #ccc;
+  background: #fff;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.graph-ui .title-box {
+  width: 100%;
+  height: auto;
+}
+
+.graph-ui .title-box h3 {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  color: #555;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.graph-ui .input-box .input-tit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.graph-ui .input-box .input-tit input {
+  width: calc(65% - 10px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+graph-ui .input-box .input-tit input:focus {
+  border: 1px solid #7c41f5;
+}
+
+.graph-ui .input-box .input-tit select {
+  width: 35%;
+  border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 0 10px 10px 0;
+  color: #333;
+}
+
+.graph-ui .input-box .input-tit select:focus {
+  border: 1px solid #7c41f5;
+}
+
+.graph-ui .input-con textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: 0;
+  padding: 10px;
+  height: 250px;
+  border-radius: 15px;
+  margin-top: 10px;
+  resize: none;
+  color: #333;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+}
+
+.graph-ui .input-con textarea:focus {
+  border: 1px solid #7c41f5;
+}
+
+.graph-ui .btns {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.graph-ui .btns button {
+  border: 1px solid #7c41f5;
+  outline: 0;
+  background: #7c41f5;
+  color: #fff;
+  padding: 10px 20px;
+  transition: all 0.4s;
+}
+
+.graph-ui .btns button:hover {
+  background: #fff;
+  color: #7c41f5;
 }

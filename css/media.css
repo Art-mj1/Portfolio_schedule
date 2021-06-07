@@ -34,21 +34,27 @@
   width: 40%;
  }
 
+
  /* Pie Chart Style Code */
  .chart {
   width: 90px;
   height: 90px;
+ }
+
+ /*Insert Form Page Style Code*/
+ .graph-ui .input-con textarea {
+  height: 200px;
  }
 }
 
 @media screen and (max-width:950px) {
 
  /* Graph-ui Contents Style Code */
- .graph-ui>div.each-pofol {
+ .graph-ui>div.each-pofil {
   height: 26%;
  }
 
- .graph-ui>div.total-pofol {
+ .graph-ui>div.table-pofil {
   height: 40%;
  }
 
@@ -58,16 +64,13 @@
   height: 100%;
  }
 
+ /* piechat.css에서 가로 높이 110px로 되어있어서 다시 지정해주기 */
  .chart canvas {
   _width: 85% !important;
   _height: auto !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
- }
-
- .graph-ui .each-pofol .each-graph div {
-  min-height: auto;
  }
 
  .graph-ui .each-pofol .each-graph div b {
@@ -85,9 +88,16 @@
  div.total-txt {
   width: 50%;
  }
+
+ /*Insert Form Page Style Code*/
+ .graph-ui>div.input-box {
+  height: calc(60% - 10px);
+ }
+
 }
 
 @media screen and (max-width:768px) {
+
  .wrapper {
   display: block;
   height: auto;
@@ -173,6 +183,9 @@
   transform: translate(-50%, -50%);
  }
 
+ .graph-ui .input-con textarea {
+  height: 180px;
+ }
 }
 
 @media screen and (max-width:400px) {
@@ -201,20 +214,17 @@
  /* Graph-ui Contents Style Code */
  .graph-ui div.intro .slide-box {
   padding: 20px 50px;
-  text-align: center;
   align-items: center;
+  text-align: center;
  }
-
 
  .graph-ui div.intro h2 {
   font-size: 18px;
  }
 
- .graph-ui div.intro P {
+ .graph-ui div.intro p {
   display: none;
  }
-
- .graph-ui div.intro a {}
 
  .graph-ui .each-pofol .each-graph {
   flex-wrap: wrap;
@@ -239,6 +249,33 @@
  }
 
  .graph-ui>div.total-pofol div.total-txt button {
-  margin: auto;
+  margin: 20px auto;
  }
+
+ /*Insert Form Page Style Code*/
+ .graph-ui>div.input-box {
+  padding: 20px 10px;
+ }
+
+ .graph-ui .title-box h3 {
+  font-size: 16px;
+ }
+
+ .graph-ui .input-box .input-tit input {
+  font-size: 12px;
+ }
+
+ .graph-ui .input-box .input-tit select {
+  font-size: 12px;
+ }
+
+ .graph-ui .input-con textarea {
+  font-size: 12px;
+ }
+
+ .graph-ui .btns button {
+  font-size: 12px;
+  padding: 8px 15px;
+ }
+
 }
