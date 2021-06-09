@@ -86,7 +86,7 @@
        <h3>Each Portfolio Process Rate</h3>
       </div>
       <div class="each-graph">
-       <div class="db-pofol">
+       <!-- <div class="db-pofol">
         <span class="chart" data-percent="86">
          <span class="percent"></span>
         </span>
@@ -113,7 +113,7 @@
         </span>
         <b>Planning Project</b>
         <i class="fa fa-bar-chart-o"></i>
-       </div>
+       </div> -->
       </div>
      </div>
     </div>
@@ -138,22 +138,7 @@
    <!-- <span class="close">&times;</span>
    <p>Some text in the Modal..</p>-->
    <form action="/schedule/php/sp_rate_insert.php" class="rate-form" name="rate_form">
-    <p>
-     <label for="db_pro">DB Project</label>
-     <input type="text" id="db_pro" value="78" name="db_pro">
-    </p>
-    <p>
-     <label for="api_pro">API Project</label>
-     <input type="text" id="api_pro" value="60" name="api_pro">
-    </p>
-    <p>
-     <label for="ren_pro">Renewal Project</label>
-     <input type="text" id="ren_pro" value="55" name="ren_pro">
-    </p>
-    <p>
-     <label for="pla_pro">Planning Project</label>
-     <input type="text" id="pla_pro" value="90" name="pla_pro">
-    </p>
+
    </form>
    <div class="updateBtnbox">
     <button type="button" id="updateBtn">Update Rate </button>
@@ -164,6 +149,7 @@
   updateBtn.onclick = function() {
    //  alert('abc');
    document.rate_form.submit();
+   modal.style.display = "none";
   }
   </script>
 
@@ -173,10 +159,12 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <!-- Plugins Load -->
  <script src="/schedule/lib/js/lightslider.js"></script>
- <script src="/schedule/lib/js/easypiechart.js"></script>
+ <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
  <!-- Vanilla JS Code Load -->
  <script src="/schedule/js/index.js"></script>
  <!-- Jquery Code Load -->
+ <script src="/schedule/js/modalAjax.js"></script>
+ <script src="/schedule/js/total_avg.js"></script>
  <script src="/schedule/js/jquery.index.js"></script>
 
 </body>

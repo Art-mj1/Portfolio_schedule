@@ -14,33 +14,34 @@ mobileMenu.onclick = () => {
 }
 
 //Pie Chart Rendering Code
-document.addEventListener('DOMContentLoaded', function () {
+$(function(){
+  $(window).ajaxComplete(function(){
   let lWidth = 10;
   let tWidth = 8;
+  let eachSize = 90;
 
   let pieSize = 200;
-  let clearset;
-  const winWidth = window.innerWidth;
+  let clearSet;
+  const winWidth = $(window).width();
+
   
-
-
-  if(winWidth <= 1280 && winWidth > 950){
+  if(winWidth <= 1280 && winWidth > 950) {
     pieSize = 150;
   } else if(winWidth <= 950 && winWidth > 400){
     pieSize = 170;
-  }else if(winWidth <= 400){
+  } else if( winWidth <= 400){
     pieSize = 140;
-  } 
-  else {
+  } else {
     pieSize = 200;
   }
 
-   
-  var chart = window.chart = new EasyPieChart(document.querySelector('.total-chart .chart'), {
+
+  // var chart = window.chart = new EasyPieChart(document.querySelector('.total-chart .chart'), {
+    $('.total-chart .chart').easyPieChart({
     easing: 'easeOutElastic',
     delay: 3000,
     barColor: '#7c41f5',
-    trackColor: '#c1a5fa',
+    trackColor: '#c1a3ff',
     scaleColor: false,
     lineWidth: 18,
     trackWidth: 18,
@@ -51,84 +52,63 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  
-  //const arr = [{a:1, b:2}, 4, 6, 5, 4, 6];
-  //for(let i = 0; i < arr.length; i++){
-  //   console.log(arr[i]);
-  // }
 
-  // arr.forEach(function(value){
-  //   console.log(value);
-  // });
+  // window.addEventListener('resize', function(){
+  $(window).resize(function(){
+    const winWidth = $(window).width();
 
-  // arr.forEach(value => {
-  //   console.log(value);
-  // })
-
-  // arr.map(function(value, idx){
-  //   console.log(value.a);
-  // });
-
-  // arr.map(value => {
-  //   console.log(value.a);
-  // })
-
-  //filter
-  //reduce
-
- window.addEventListener('resize',function(){
-  const winWidth = window.innerWidth;
-
-  if(winWidth <= 1280 && winWidth > 950){
-    pieSize = 150;
-  } else if(winWidth <= 950 && winWidth > 400){
-    pieSize = 170;
-  }else if(winWidth <= 400){
-    pieSize = 140;
-  } 
-  else {
-    pieSize = 200;
-  }
-
-
-  clearTimeout(clearset);
-
-  clearset = setTimeout(function(){
-
-    document.querySelector('.total-chart .chart canvas').remove();
-  var chart = window.chart = new EasyPieChart(document.querySelector('.total-chart .chart'), {
-    easing: 'easeOutElastic',
-    delay: 3000,
-    barColor: '#7c41f5',
-    trackColor: '#c1a5fa',
-    scaleColor: false,
-    lineWidth: 18,
-    trackWidth: 18,
-    size: pieSize,
-    lineCap: 'butt',
-    onStep: function(from, to, percent) {
-      this.el.children[0].innerHTML = Math.round(percent);
+    if(winWidth <= 1280 && winWidth > 950) {
+      pieSize = 180;
+    } else if(winWidth <= 950 && winWidth > 400){
+      pieSize = 170;
+    } else if( winWidth <= 400){
+      pieSize = 140;
+    } else {
+      pieSize = 200;
     }
+   console.log(pieSize);
+
+    clearTimeout(clearSet);
+
+    clearSet = setTimeout(function(){
+     $('.total-chart .chart').removeData('easyPieChart').find('canvas').remove();
+    // var chart = window.chart = new EasyPieChart(document.querySelector('.total-chart .chart'), {
+      $('.total-chart .chart').easyPieChart
+        ({
+        easing: 'easeOutElastic',
+        delay: 3000,
+        barColor: '#7c41f5',
+        trackColor: '#c1a3ff',
+        scaleColor: false,
+        lineWidth: 18,
+        trackWidth: 18,
+        size: pieSize,
+        lineCap: 'butt',
+        onStep: function(from, to, percent) {
+          this.el.children[0].innerHTML = Math.round(percent);
+        }
+      });
+      
+    }, 150);    
   });
 
-   }, 150);
- });
+ 
+//   //-------------each charts
 
-  //-------------each charts
+//   if(winWidth <= 950){
+//     lWidth = 5;
+//     tWidth = 4;
+//   } else {
+//     lWidth = 10;
+//     tWidth = 8;
+//   }
 
-  if(winWidth <= 950){
-    lWidth = 5;
-    tWidth = 4;
-  } else {
-    lWidth = 10;
-    tWidth = 8;
-  }
-
-  if(winWidth <= 1280){
-   eachSize = 90;
-  } else {
-    eachSize = 110;
-  }
+//   if(winWidth <= 1280){
+//    eachSize = 90;
+//   } else {
+//     eachSize = 110;
+//   }
+// $(window).ajaxComplete(function(){
   const poData = [
     {poKind:'.db-pofol', bColor:'#7c41f5', tColor:'#c1a5fa'},
     {poKind:'.api-pofol', bColor:'#ff9062', tColor:'#ffbca1'},
@@ -141,24 +121,26 @@ document.addEventListener('DOMContentLoaded', function () {
     poData.map(value => {
       //console.log(value.b);
            
-      var chart = window.chart = new EasyPieChart(document.querySelector(value.poKind + ' .chart'), {
+      // var chart = window.chart = new EasyPieChart(document.querySelector(value.poKind + ' .chart'), {
+        $(value.poKind + ' .chart').easyPieChart({
         easing: 'easeOutElastic',
         delay: 3000,
         barColor: value.bColor,
         trackColor: value.tColor,
         scaleColor: false,
-        lineWidth: lWidth,
-        trackWidth: tWidth,
-        size:eachSize,
+        lineWidth: 5,
+        trackWidth: 5,
+        size: 110,
         lineCap: 'round',
         onStep: function (from, to, percent) {
         this.el.children[0].innerHTML = Math.round(percent);
-        }
+       }
       });
     });
   }
   startPie();
-}); 
+})
+});
 
 //Open Modal for Input Rates
 //1. 버튼 DOM 저장 => index.php 133번줄
