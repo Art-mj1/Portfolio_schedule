@@ -41,41 +41,26 @@
 
  <div class="each-contents">
   <div class="each-btns">
-   <a href="#" class="active">Database</a>
-   <a href="#">API</a>
-   <a href="#">Renewal</a>
-   <a href="#">Planning</a>
+   <a href="?key=database" class="active">Database</a>
+   <a href="?key=api">API</a>
+   <a href="?key=renewal">Renewal</a>
+   <a href="?key=planning">Planning</a>
   </div>
   <ul class="con-details">
    <?php
-  include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
-  $sql1 = "SELECT * FROM sp_table WHERE SP_cate = 'database' ORDER BY SP_idx DESC LIMIT 5";
-  $db_result = mysqli_query($dbConn, $sql1);
-  $db_num = mysqli_num_rows($db_result);  
-  
-  if(!$db_num == 0){
-  ?>
-   <li>
-    <p>입력된 일정이 없습니다.</p>
-   </li>
+       $tab_path = "";
+       if(array_key_exists("key", $_GET)){
+        $tab_path = $_GET['key']; //$다음에 _ (언더바)는 서버통신을 불러오기위해 꼭 필요함.
+       }else{
+        $tab_path = "database";
+       }
+       ?>
+
    <?php
-    } else {
-      while($db_row=mysqli_fetch_array($db_result)){
-      $db_row_cate = $db_row['SP_cate'];
-      $db_row_tit = $db_row['SP_tit'];
-      $db_row_reg = $db_row['SP_reg'];
-    ?>
-   <li>
-    <i class="fa fa-<?=db_row_cate?>"></i>
-    <div class="con-txt">
-     <p><a href="#"><?=db_row_tit?></a></p>
-     <em><?=db_row_reg?></em>
-    </div>
-   </li>
-   <?php
-     }
-    }
-    ?>
+   $tab_path = $_GET['key'];
+  //  echo $tab_path;
+  include $_SERVER["DOCUMENT_ROOT"].'/schedule/include/tabs/'.$tab_path.'.php';
+   ?>
   </ul>
 
  </div>
