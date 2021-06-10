@@ -162,9 +162,10 @@
  <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
  <!-- Vanilla JS Code Load -->
  <script src="/schedule/js/index.js"></script>
- <!-- Jquery Code Load -->
+
  <script src="/schedule/js/modalAjax.js"></script>
  <script src="/schedule/js/total_avg.js"></script>
+ <!-- Jquery Code Load -->
  <script src="/schedule/js/jquery.index.js"></script>
 
 </body>

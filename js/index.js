@@ -95,19 +95,19 @@ $(function(){
  
 //   //-------------each charts
 
-//   if(winWidth <= 950){
-//     lWidth = 5;
-//     tWidth = 4;
-//   } else {
-//     lWidth = 10;
-//     tWidth = 8;
-//   }
+  if(winWidth <= 950){
+    lWidth = 5;
+    tWidth = 5;
+  } else {
+    lWidth = 8;
+    tWidth = 8;
+  }
 
-//   if(winWidth <= 1280){
-//    eachSize = 90;
-//   } else {
-//     eachSize = 110;
-//   }
+  if(winWidth <= 1280){
+   eachSize = 90;
+  } else {
+    eachSize = 110;
+  }
 // $(window).ajaxComplete(function(){
   const poData = [
     {poKind:'.db-pofol', bColor:'#7c41f5', tColor:'#c1a5fa'},
@@ -128,9 +128,9 @@ $(function(){
         barColor: value.bColor,
         trackColor: value.tColor,
         scaleColor: false,
-        lineWidth: 5,
-        trackWidth: 5,
-        size: 110,
+        lineWidth: lWidth,
+        trackWidth: tWidth,
+        size: eachSize,
         lineCap: 'round',
         onStep: function (from, to, percent) {
         this.el.children[0].innerHTML = Math.round(percent);

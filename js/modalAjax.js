@@ -7,8 +7,8 @@ $(function(){
     console.log(result);
 
     const obj = JSON.parse(result);
-    console.log(obj);
-    console.log(typeof(obj[0].db_rate));
+    // console.log(obj);
+    // console.log(typeof(obj[0].db_rate));
 
     const dbRATE = Number(obj[0].db_rate);
     const apiRATE = Number(obj[0].api_rate);
