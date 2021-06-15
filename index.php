@@ -38,7 +38,7 @@
  const hostname = window.location.href;
  console.log(hostname);
  if (hostname == 'http://localhost/schedule/') {
-  window.location.replace('http://localhost/schedule/?key=database');
+  window.location.replace('http://localhost/schedule/index.php?key=database');
  }
  </script>
 </head>
@@ -120,7 +120,6 @@
     <?php
         include $_SERVER['DOCUMENT_ROOT']."/schedule/include/total_pofol.php";
         ?>
-
    </section>
    <?php
         include $_SERVER['DOCUMENT_ROOT']."/schedule/include/table_ui.php";
@@ -161,10 +160,9 @@
  <script src="/schedule/lib/js/lightslider.js"></script>
  <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
  <!-- Vanilla JS Code Load -->
- <script src="/schedule/js/index.js"></script>
-
  <script src="/schedule/js/modalAjax.js"></script>
  <script src="/schedule/js/total_avg.js"></script>
+ <script src="/schedule/js/index.js"></script>
  <!-- Jquery Code Load -->
  <script src="/schedule/js/jquery.index.js"></script>
 
