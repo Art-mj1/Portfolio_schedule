@@ -4,7 +4,7 @@ $(function(){
  $.ajax({
   url: "/schedule/php/read_json.php", 
   success: function(result){
-    console.log(result);
+    // console.log(result);
 
     const obj = JSON.parse(result);
     // console.log(obj);
