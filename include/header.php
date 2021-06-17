@@ -24,19 +24,25 @@
   </li>
  </ul>
  <a href="#" class="sign-out"><i class="fa fa-sign-out"></i></a>
- <script>
- const pathName2 = window.location.href
- const tabBtns2 = document.querySelectorAll('.gnb li');
- const tabElements2 = ['index', 'sp_insert_form', 'sp_detail_form']
- for (let i = 0; i < tabBtns2.length; i++) {
-  tabBtns2[i].classList.remove('active');
-  if (pathName2.includes(tabElements2[i])) {
-   tabBtns2[i].classList.add('active');
-  }
- }
- </script>
  <div class="mobile-menu">
   <span></span>
   <span></span>
  </div>
+ <ul class="mobile-menu-items">
+  <li><a href="#"><i class="fa fa-trello"></i></a></li>
+  <li><a href="#"><i class="fa fa-pencil"></i></a></li>
+  <li><a href="#"><i class="fa fa-search"></i></a></li>
+  <li><a href="#"><i class="fa fa-sign-out"></i></a></li>
+ </ul>
 </header>
+<script>
+const pathName2 = window.location.href
+const tabBtns2 = document.querySelectorAll('.gnb li');
+const tabElements2 = ['index', 'sp_insert_form', 'sp_detail_form']
+for (let i = 0; i < tabBtns2.length; i++) {
+ tabBtns2[i].classList.remove('active');
+ if (pathName2.includes(tabElements2[i])) {
+  tabBtns2[i].classList.add('active');
+ }
+}
+</script>

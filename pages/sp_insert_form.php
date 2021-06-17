@@ -96,18 +96,43 @@
       ?>
   </div>
   <!-- End of Main Dashboard Frame -->
- </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
 
- <!-- Jquery Framework Load -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <!-- Plugins Load -->
- <script src="/schedule/lib/js/lightslider.js"></script>
- <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
- <!-- Vanilla JS Code Load -->
- <script src="/schedule/js/index.js"></script>
- <!-- Jquery Code Load -->
- <script src="/schedule/js/total_avg.js"></script>
- <script src="/schedule/js/jquery.index.js"></script>
+   <!-- Modal content -->
+   <div class="modal-content">
+    <!-- <span class="close" id="times">&times;</span>
+  <p>Some text in the Modal..</p> -->
+    <form action="/schedule/php/sp_rate_insert.php" class="rate-form" name="rate_form">
+
+    </form>
+    <div class="updateBtnBox">
+     <button type="button" id="updateBtn">Update Rate</button>
+    </div>
+   </div>
+   <script>
+   const updateBtn = document.querySelector('#updateBtn');
+   //const modal = document.querySelector('#myModal');
+   updateBtn.onclick = function() {
+    //alert('abc');
+    document.rate_form.submit();
+    modal.style.display = "none";
+   }
+   </script>
+
+  </div>
+
+  <!-- Jquery Framework Load -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Plugins Load -->
+  <script src="/schedule/lib/js/lightslider.js"></script>
+  <script src="/schedule/lib/js/jquery.easypiechart.min.js"></script>
+  <!-- Vanilla JS Code Load -->
+  <script src="/schedule/js/index.js"></script>
+  <script src="/schedule/js/modalAjax.js"></script>
+  <!-- Jquery Code Load -->
+  <script src="/schedule/js/total_avg.js"></script>
+  <script src="/schedule/js/jquery.index.js"></script>
 </body>
 
 </html>

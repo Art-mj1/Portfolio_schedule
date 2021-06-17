@@ -155,9 +155,12 @@
 
  /* Header CSS Code */
  header {
-  padding: 15px;
+  padding: 15px 25px;
  }
 
+ .custom-font {
+  font-size: 50px;
+ }
 
  /* Graph-ui Contents Style Code */
  .graph-ui {
@@ -196,6 +199,10 @@
   height: auto;
   margin-top: 10px;
   width: 100%;
+ }
+
+ .table-ui .each-contents .each-btns button {
+  font-size: 12px;
  }
 
  div.total-txt {
@@ -237,6 +244,10 @@
  }
 
  /* Detail Page Style Code */
+ .graph-ui.detail .detail-board {
+  max-height: 350px;
+ }
+
  .graph-ui.detail .each-pofol .each-graph {
   align-content: center;
  }
@@ -300,8 +311,13 @@
 @media screen and (max-width:450px) {
 
  /* Detail Page Style Code*/
+ .graph-ui.detail .each-pofol {
+  padding: 5px 0;
+ }
+
  .graph-ui.detail .each-pofol .each-graph div {
-  width: 50%;
+  width: calc(50% - 5px);
+  margin: 5px 0;
  }
 
  .board-table li.board-contents span a.del-btn.txt {

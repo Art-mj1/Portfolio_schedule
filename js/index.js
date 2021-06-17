@@ -6,13 +6,6 @@ conTxt.forEach(element => {
   element.textContent = cutTxt;
 });
 
-//Mobile Menu Activate
-const mobileMenu = document.querySelector('.mobile-menu');
-
-mobileMenu.onclick = () => {
-  mobileMenu.classList.toggle('active');
-}
-
 //Pie Chart Rendering Code
 $(function(){
   $(window).ajaxComplete(function(){
@@ -136,6 +129,23 @@ $(function(){
   startPie();
 
   });
+
+//   Mobile Menu Activate
+// const mobileMenu = document.querySelector('.mobile-menu');
+
+// mobileMenu.onclick = () => {
+//   mobileMenu.classList.toggle('active');
+//     }
+
+$(".mobile-menu").click(function(){
+  $(this).toggleClass("active");
+
+  if($(this).hasClass("active")){
+  $(this).next().addClass("show-hide")
+  } else {
+    $(this).next().removeClass("show-hide")
+  }
+});
 });
 
 //Open Modal for Input Rates

@@ -41,10 +41,10 @@
 
  <div class="each-contents">
   <div class="each-btns">
-   <button value='database' class="active">데이터베이스</button>
+   <button value='database' class="active">DB</button>
    <button value='thermometer-half'>API</button>
-   <button value='clone'>리뉴얼</button>
-   <button value='bar-chart-o'>기획</button>
+   <button value='clone'>Renewal</button>
+   <button value='bar-chart-o'>Planning</button>
   </div>
   <ul class="con-details" id="con-details">
 
