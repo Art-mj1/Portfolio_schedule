@@ -141,9 +141,11 @@ $(".mobile-menu").click(function(){
   $(this).toggleClass("active");
 
   if($(this).hasClass("active")){
-  $(this).next().addClass("show-hide")
+  $(this).next().removeClass("hide");
+  $(this).next().addClass("show")
   } else {
-    $(this).next().removeClass("show-hide")
+    $(this).next().removeClass("show");
+    $(this).next().addClass("hide")
   }
 });
 });

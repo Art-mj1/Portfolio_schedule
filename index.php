@@ -34,13 +34,6 @@
  <!-- Media Css Link -->
  <link rel="stylesheet" href="/schedule/css/media.css">
 
- <script defer>
- const hostname = window.location.href;
- console.log(hostname);
- if (hostname == 'http://localhost/schedule/') {
-  window.location.replace('http://localhost/schedule/index.php?key=database');
- }
- </script>
 </head>
 
 <body>

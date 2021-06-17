@@ -1,6 +1,11 @@
 <?php
- include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
- $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC ";
+$tabIdx = $_GET['key'];
+ include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";//db 접속로드
+
+if($tabIdx == "all"){
+  $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC";
+}else{$sql = "SELECT * FROM sp_table WHERE SP_cate = '{$tabIdx}' ORDER BY SP_idx DESC";}
+
  $board_result = mysqli_query($dbConn, $sql);
 
  while($board_row=mysqli_fetch_array($board_result)){

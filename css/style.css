@@ -212,14 +212,17 @@ header .sign-out {
   transform: translateY(-40px);
   opacity: 0;
   visibility: hidden;
-  animation: hide 0.4s 1;
 }
 
-.mobile-menu-items.show-hide {
-  animation: show-hide 0.4s 1;
+.mobile-menu-items.hide {
+  animation: hide 0.4s 1;
   animation-fill-mode: forwards;
 }
 
+.mobile-menu-items.show {
+  animation: show 0.4s 1;
+  animation-fill-mode: forwards;
+}
 
 .mobile-menu-items li {
   width: 25%;

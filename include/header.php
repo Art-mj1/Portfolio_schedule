@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+  if(isset($_SESSION['authcode'])){
+    $authcode = $_SESSION['authcode'];
+  } else {
+    echo "
+      <script>
+        location.href='/schedule/pages/sp_auth.php';
+      </script>
+    ";
+  }
+
+?>
 <header>
  <h2><a href="/schedule/index.php"><i class="custom-font"></i></a></h2>
  <ul class="gnb">
