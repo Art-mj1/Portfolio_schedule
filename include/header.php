@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-  if(isset($_SESSION['authcode'])){
-    $authcode = $_SESSION['authcode'];
+  if(isset($_SESSION['usercode'])){
+    $authcode = $_SESSION['usercode'];
   } else {
     echo "
       <script>
@@ -37,7 +37,7 @@ session_start();
    <span class="nav-bottom"></span>
   </li>
  </ul>
- <a href="#" class="sign-out"><i class="fa fa-sign-out"></i></a>
+ <a href="/schedule/php/sign_out.php" class="sign-out"><i class="fa fa-sign-out"></i></a>
  <div class="mobile-menu">
   <span></span>
   <span></span>
@@ -46,7 +46,7 @@ session_start();
   <li><a href="#"><i class="fa fa-trello"></i></a></li>
   <li><a href="#"><i class="fa fa-pencil"></i></a></li>
   <li><a href="#"><i class="fa fa-search"></i></a></li>
-  <li><a href="#"><i class="fa fa-sign-out"></i></a></li>
+  <li><a href="/schedule/php/sign_out.php"><i class="fa fa-sign-out"></i></a></li>
  </ul>
 </header>
 <script>

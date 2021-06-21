@@ -18,7 +18,7 @@ if($tabIdx == "all"){
 <li class="board-contents">
  <span><?=$board_row_idx?></span>
  <span><?=$board_row_cate?></span>
- <span><a href="#">
+ <span><a href="/schedule/pages/sp_detail_view.php?pageNum=<?=$board_row_idx?>">
    <?=$board_row_tit?></a></span>
  <span><?=$board_row_reg?></span>
  <span>

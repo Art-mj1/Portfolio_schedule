@@ -67,46 +67,74 @@
     </div>
 
     <div class="detail-board">
-     <div class="board-btns">
-      <a href="?key=all" class="active">All</a>
-      <a href="?key=database">Database</a>
-      <a href="?key=thermometer-half">API</a>
-      <a href="?key=clone">Renewal</a>
-      <a href="?key=bar-chart-o">Planning</a>
-     </div>
+     <?php
+        $page_num = $_GET['pageNum'];
+        // echo $page_num;
 
-     <div class="board-table">
-      <ul>
-       <li class="board-title">
-        <span>번호</span>
-        <span>분류</span>
-        <span>제목</span>
-        <span>등록일</span>
-        <span>삭제</span>
-       </li>
+        include $_SERVER['DOCUMENT_ROOT']."/connect/db_conn.php";
+        $sql= "SELECT * FROM sp_table WHERE SP_idx=$page_num";
 
-       <?php
-       $include_path= $_GET['key'];
-       include $_SERVER["DOCUMENT_ROOT"].'/schedule/include/tabs/all.php';
-      ?>
-      </ul>
-      <div class="board-table-btn">
-       <!-- <form action="#" class="search-box">
-        <select>
-         <option value="">아이디</option>
-         <option value="">제목</option>
-        </select>
-        <input type="text">
-        <button type="submit"><i class="fa fa-search"></i></button>
-       </form> -->
-       <button type="button" class="more-btn">더보기</button>
+        $detail_result = mysqli_query($dbConn, $sql);
+        $detail_row = mysqli_fetch_array($detail_result);
+
+        $detail_num = $detail_row['SP_idx'];
+        $detail_tit = $detail_row['SP_tit'];
+        $detail_cate = $detail_row['SP_cate'];
+        $detail_con = $detail_row['SP_con'];
+        $detail_reg = $detail_row['SP_reg'];
+        // echo $detail_num,$detail_cate;
+        //echo $detail_tit;
+       ?>
+     <form action="/schedule/php/update_details.php?abc=1">
+      <div class="detail-title">
+       <h2><?=$detail_tit?></h2>
+       <input type="text" value="<?=$detail_tit?>" class="hidden-tit" name="update_tit">
+       <input type="hidden" value="<?=$detail_num?>" name="update_num">
       </div>
+
+      <div class="board-table detail-view">
+       <ul>
+        <li class="board-title">
+         <span>번호</span>
+         <span>분류</span>
+         <span>내용</span>
+         <span>등록일</span>
+        </li>
+
+
+
+        <li class="board-contents">
+         <span>
+          <?=$detail_num?>
+         </span>
+         <span>
+          <?=$detail_cate?>
+         </span>
+         <span>
+          <em><?=$detail_con?></em>
+          <textarea class="hidden-con" name="update_con"><?=$detail_con?></textarea>
+         </span>
+         <span>
+          <?=$detail_reg?>
+         </span>
+        </li>
+       </ul>
+       <div class="send-update">
+        <button type="submit">수정입력</button>
+       </div>
+     </form>
+     <div class="detail-btns">
+      <button type="button" class="update-btn">수정</button>
      </div>
+    </div>
    </section>
   </div>
+  <!-- End of board table -->
+
 
  </div>
- <!-- End of board table -->
+
+
 
 
 
@@ -124,48 +152,28 @@
  <!-- Jquery Code Load -->
  <script src="/schedule/js/jquery.index.js"></script>
 
-
  <script>
  $(function() {
-  $(".board-contents").hide();
-  $(".board-contents").slice(0, 5).show();
+  $(".update-btn").click(function() {
+   $(this).toggleClass("on"); //this는 자신을 감싸는 함수를 그대로 받는건지?
 
-  $(".more-btn").click(function() {
-   //  console.log($(".board-contents:hidden").length);
-   $(".board-contents:hidden").slice(0, 5).show();
+   if ($(this).hasClass("on")) { //update-btn을 클릭했을 때 on 클래스를 갖고 있으면
+    $(".detail-view em, .detail-title h2").hide();
+    $(".hidden-tit, .hidden-con, .send-update").show(); //해당 클래스들을 보여준다 (=display:block)
+    $(this).text('수정 취소');
+   } else { //update-btn을 클릭했을 때 on 클래스가 없으면
+    $(".detail-view em, .detail-title h2").show();
+    $(".hidden-tit, .hidden-con, .send-update").hide(); //해당 클래스들을 숨긴다 (=display:none)
+    $(this).text('수정');
+   }
   });
-
-  //테이블 탭 활성화 기능
-
  });
- </script>
- <script>
- const pathName = window.location.href;
- const tabBtns = document.querySelectorAll('.board-btns a');
- const tabElements = ['all', 'database', 'thermometer-half', 'clone', 'bar-chart-o']
- console.log(tabBtns);
+ //   $(".detail-view em, .detail-title h2").hide();
+ //   $(".hidden-tit, .hidden-con, .send-update").show(); //해당 클래스들을 숨긴다 (=display:none)
+ //   $(this).text('수정');
 
- for (let i = 0; i < tabBtns.length; i++) {
-  tabBtns[i].classList.remove('active');
-  if (pathName.includes(tabElements[i])) {
-   tabBtns[i].classList.add('active');
-  }
- }
 
- //  tabBtns.forEach(btn => {
- //   btn.classList.remove('active');
  //  });
- //  if (pathName.includes('all')) {
- //   tabBtns[0].classList.add('active');
- //  } else if (pathName.includes('database')) {
- //   tabBtns[1].classList.add('active')
- //  } else if (pathName.includes('api')) {
- //   tabBtns[2].classList.add('active')
- //  } else if (pathName.includes('renewal')) {
- //   tabBtns[3].classList.add('active')
- //  } else if (pathName.includes('planning')) {
- //   tabBtns[4].classList.add('active')
- //  }
  </script>
 </body>
 
