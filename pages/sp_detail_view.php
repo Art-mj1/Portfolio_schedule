@@ -125,12 +125,15 @@
      </form>
      <div class="detail-btns">
       <button type="button" class="update-btn">수정</button>
+      <button type="button" class="delete-btn">삭제</button>
      </div>
     </div>
    </section>
   </div>
   <!-- End of board table -->
-
+  <?php
+        include $_SERVER['DOCUMENT_ROOT']."/schedule/include/modal.php";
+      ?>
 
  </div>
 
@@ -154,6 +157,7 @@
 
  <script>
  $(function() {
+  //수정버튼 클릭 이벤트
   $(".update-btn").click(function() {
    $(this).toggleClass("on"); //this는 자신을 감싸는 함수를 그대로 받는건지?
 
@@ -165,6 +169,17 @@
     $(".detail-view em, .detail-title h2").show();
     $(".hidden-tit, .hidden-con, .send-update").hide(); //해당 클래스들을 숨긴다 (=display:none)
     $(this).text('수정');
+   }
+  });
+
+  //삭제버튼 클릭이벤트
+  $(".delete-btn").click(function() {
+   const isCheck = confirm('정말 삭제하시겠습니까?');
+   // alert(isCheck);
+   if (isCheck == false) {
+    return false;
+   } else {
+    location.href = '/schedule/php/sp_delete.php?del_idx=<?=$detail_num?>'
    }
   });
  });

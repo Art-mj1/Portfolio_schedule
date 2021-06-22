@@ -108,7 +108,9 @@
  </div>
  <!-- End of board table -->
 
-
+ <?php
+        include $_SERVER['DOCUMENT_ROOT']."/schedule/include/modal.php";
+      ?>
 
 
  <!-- Jquery Framework Load -->

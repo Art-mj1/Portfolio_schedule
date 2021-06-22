@@ -1,9 +1,10 @@
+<meta charset="UTF-8">
 <!-- Table Contents on Right side -->
 <section class="table-ui">
  <div class="new-update">
   <div class="tit-box">
    <p>Recent Update</p>
-   <a href="#">More</a>
+   <a href="/schedule/pages/sp_detail_form.php?key=all">More</a>
   </div>
 
   <ul class="con-details">
@@ -11,7 +12,7 @@
   include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
   $sql = "SELECT * FROM sp_table ORDER BY SP_idx DESC LIMIT 5";
   $ta_result = mysqli_query($dbConn, $sql);
-
+  $ta_num_result = mysqli_num_rows($ta_result);
   if(!$ta_result){
 
   ?>
@@ -21,6 +22,7 @@
    <?php
    } else {
     while($ta_row=mysqli_fetch_array($ta_result)){
+     $ta_row_idx = $ta_row['SP_idx'];
      $ta_row_cate = $ta_row['SP_cate'];
      $ta_row_tit = $ta_row['SP_tit'];
      $ta_row_reg = $ta_row['SP_reg'];
@@ -28,7 +30,7 @@
    <li>
     <i class="fa fa-<?=$ta_row_cate?>"></i>
     <div class="con-txt">
-     <p><a href="#"><?=$ta_row_tit?></a></p>
+     <p><a href="/schedule/pages/sp_detail_view.php?pageNum=<?=$ta_row_idx?>"><?=$ta_row_tit?></a></p>
      <em><?=$ta_row_reg?></em>
     </div>
    </li>
@@ -100,7 +102,7 @@ function reqListener() {
     <li>
     <i class="fa fa-${result[i].sp_cate}"></i>
     <div class="con-txt">
-    <p><a href="#">${result[i].sp_tit}</a></p>
+    <p><a href="/schedule/pages/sp_detail_view.php?pageNum=${result[i].sp_idx}">${result[i].sp_tit}</a></p>
     <em>${result[i].sp_reg}</em>
     </div>
     </li>
