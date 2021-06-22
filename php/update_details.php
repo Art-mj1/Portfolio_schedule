@@ -20,11 +20,11 @@ $arr = array();
 
 while($update_row = mysqli_fetch_array($update_result)){
 array_push($arr,array(
- 'sp_idx' =>  $update_row ['SP_idx'],
- 'sp_cate' =>  $update_row ['SP_cate'],
- 'sp_tit' =>  $update_row ['SP_tit'],
- 'sp_con' =>  $update_row ['SP_con'],
- 'sp_reg' =>  $update_row ['SP_reg']
+ 'sp_idx' =>  $update_row['SP_idx'],
+ 'sp_cate' =>  $update_row['SP_cate'],
+ 'sp_tit' =>  $update_row['SP_tit'],
+ 'sp_con' =>  $update_row['SP_con'],
+ 'sp_reg' =>  $update_row['SP_reg']
 ));
 }
 
