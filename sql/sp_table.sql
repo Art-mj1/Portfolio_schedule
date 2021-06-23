@@ -32,7 +32,7 @@ CREATE TABLE `sp_table` (
   `SP_cate` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '프로젝트 종류',
   `SP_tit` text CHARACTER SET utf8 NOT NULL COMMENT '업무 제목',
   `SP_con` text CHARACTER SET utf8 NOT NULL COMMENT '업무 내용',
-  `SP_reg` date NOT NULL COMMENT '등록일'
+  `SP_reg]` date NOT NULL COMMENT '등록일'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

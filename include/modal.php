@@ -6,6 +6,10 @@
  <div class="modal-content">
   <!-- <span class="close">&times;</span>
    <p>Some text in the Modal..</p>-->
+  <div class="close" id="close">
+   <span></span>
+   <span></span>
+  </div>
   <form action="/schedule/php/sp_rate_insert.php" class="rate-form" name="rate_form">
 
   </form>
@@ -15,9 +19,13 @@
  </div>
  <script>
  const updateBtn = document.querySelector('#updateBtn');
+ const closeBtn = document.querySelector('#close');
  updateBtn.onclick = function() {
   //  alert('abc');
   document.rate_form.submit();
+  modal.style.display = "none";
+ }
+ closeBtn.onclick = function() {
   modal.style.display = "none";
  }
  </script>

@@ -151,6 +151,7 @@
   width: 100%;
   height: 100%;
   border-radius: 0;
+  display: block;
  }
 
  /* Header CSS Code */
@@ -334,6 +335,9 @@
 }
 
 @media screen and (max-width:450px) {
+ graph-ui.detail .detail-board {
+  height: auto;
+ }
 
  /* Detail Page Style Code*/
  .graph-ui.detail .each-pofol {
@@ -351,6 +355,10 @@
 
  .board-table li.board-contents span a.del-btn.icon {
   display: block;
+ }
+
+ .graph-ui.detail .detail-board {
+  height: auto;
  }
 }
 
@@ -446,12 +454,19 @@
 
  /* Modal Content Style Code  */
  .modal-content {
-  width: 95%;
+  width: 90%;
   margin: 40% auto;
  }
 
  .modal-content .rate-form p label {
   font-size: 12px;
+ }
+
+ .modal-content .close {
+  width: 30px;
+  height: 30px;
+  right: -10px;
+  top: -10px;
  }
 
  #updateBtn {

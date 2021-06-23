@@ -43,9 +43,9 @@ session_start();
   <span></span>
  </div>
  <ul class="mobile-menu-items">
-  <li><a href="#"><i class="fa fa-trello"></i></a></li>
-  <li><a href="#"><i class="fa fa-pencil"></i></a></li>
-  <li><a href="#"><i class="fa fa-search"></i></a></li>
+  <li><a href="/schedule/index.php"><i class="fa fa-trello"></i></a></li>
+  <li><a href="/schedule/pages/sp_insert_form.php"><i class="fa fa-pencil"></i></a></li>
+  <li><a href="/schedule/pages/sp_detail_form.php?key=all"><i class="fa fa-search"></i></a></li>
   <li><a href="/schedule/php/sign_out.php"><i class="fa fa-sign-out"></i></a></li>
  </ul>
 </header>
